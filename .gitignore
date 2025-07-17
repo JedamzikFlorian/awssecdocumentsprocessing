@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+
+# VS Code
+.vscode/
+
+# Notebooks / Tempfiles
+.ipynb_checkpoints
+*.log
+*.tmp
+
+# SageMaker & AWS
+output/
+checkpoints/
+runs/
+logs/
+*.pem
+*.key
+*.crt
+*.env
+.env*
+*.pt
+*.pth
+*.ckpt
+*.onnx
+
+# Daten & Artefakte
+data/raw_pdfs/
+data/preprocessed/
+data/**/*.png
+data/**/*.json
+
+# Private Konfiguration
+cluster-config.json
