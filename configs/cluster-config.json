@@ -9,7 +9,7 @@
         "SourceS3Uri": "s3://financial-documents-sec/scripts/lifecycle.sh",
         "OnCreate": "RUN"
       },
-      "ExecutionRole": "arn:aws:iam::642338715709:role/Sagemaker-SEC-Processing-Role"
+      "ExecutionRole": "arn:aws:iam::<ACCOUNT_ID>:role/Sagemaker-SEC-Processing-Role"
     },
     {
       "InstanceGroupName": "worker-group",
@@ -19,7 +19,7 @@
         "SourceS3Uri": "s3://financial-documents-sec/scripts/lifecycle.sh",
         "OnCreate": "RUN"
       },
-      "ExecutionRole": "arn:aws:iam::642338715709:role/Sagemaker-SEC-Processing-Role"
+      "ExecutionRole": "arn:aws:iam::ACCOUNT_ID:role/Sagemaker-SEC-Processing-Role"
     }
   ]
 }
