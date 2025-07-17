@@ -40,3 +40,6 @@ data/**/*.json
 
 # Private Konfiguration
 cluster-config.json
+
+# .gitignore
+.env
