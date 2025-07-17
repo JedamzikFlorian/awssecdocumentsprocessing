@@ -1,0 +1,5 @@
+{
+  "ClusterConfigPath": "s3://financial-documents-sec/configs/cluster-config.json",
+  "LifecycleConfigName": "llama-lifecycle-config",
+  "Region": "eu-central-1"
+}

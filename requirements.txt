@@ -1,0 +1,6 @@
+boto3
+pdfminer.six
+pandas
+scikit-learn
+sagemaker
+PyMuPDF
