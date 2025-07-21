@@ -1,8 +1,10 @@
 #!/bin/bash
 echo "🚀 Lifecycle-Skript gestartet"
-sudo apt update
-sudo apt install -y git
-git clone https://github.com/hiyouga/LLaMA-Factory.git /home/sagemaker-user/llama-factory
-cd /home/sagemaker-user/llama-factory
-pip install -r requirements.txt
+apt update
+apt install -y git
+mkdir -p /opt/llama-factory
+git clone https://github.com/hiyouga/LLaMA-Factory.git /opt/llama-factory
+cd /opt/llama-factory
+which pip || apt install -y python3-pip
+pip3 install -r requirements.txt
 echo "✅ Setup abgeschlossen"

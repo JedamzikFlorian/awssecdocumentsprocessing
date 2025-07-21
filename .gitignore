@@ -39,7 +39,7 @@ data/**/*.png
 data/**/*.json
 
 # Private Konfiguration
-cluster-config.json
+configs/cluster-config.json
 
 # .gitignore
 .env
