@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 
 ### 2. Pdf zu Foto verarbeiten
-python scripts/docs_to_images.py "data/raw_pdfs/DATEI.pdf" "data/preprocessed/ZIELORDNER"
+python scripts/.py "data/raw_pdfs/DATEI.pdf" "data/preprocessed/ZIELORDNER"
 
 
 ### 3. HTML-Tabelle erstellen (manuell)
