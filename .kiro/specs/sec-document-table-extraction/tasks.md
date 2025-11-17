@@ -38,7 +38,9 @@ This implementation plan breaks down the SEC document table extraction pipeline 
     - Verify directory was created successfully
     - _Requirements: 1.3_
 
-- [ ] 3. Implement training data JSON generation
+- [x] 3. Implement training data JSON generation
+
+
   - [ ] 3.1 Update `generate_training_data_json.py` to match LLaMA-Factory format
     - Change output format from simple dict to messages array format
     - Add system/user/assistant message structure
