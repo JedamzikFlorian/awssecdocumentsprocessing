@@ -1,5 +1,49 @@
 import os
 import json
+from bs4 import BeautifulSoup
+
+
+def validate_html(html_content, filename):
+    """
+    Validate HTML content for well-formed table structure
+    
+    Args:
+        html_content: HTML string to validate
+        filename: Name of file being validated (for error messages)
+    
+    Returns:
+        (is_valid, error_message)
+    """
+    try:
+        soup = BeautifulSoup(html_content, 'html.parser')
+
+        # Check if there is at least one table tag
+        tables = soup.find_all('table')
+        if not tables:
+            return False, "No <table> found"
+
+        # Check for basic table structure
+        for table in tables:
+            rows = table.find_all('tr')
+            if not rows:
+                return False, "Table has no <tr> (row) tags"
+            
+            # Check if rows have cells
+            has_cells = False
+            for row in rows:
+                cells = row.find_all(['td', 'th'])
+                if cells:
+                    has_cells = True
+                    break
+            
+            if not has_cells:
+                return False, "Table rows have no <td> or <th> (cell) tags"
+        
+        return True, None
+    
+    except Exception as e:
+        return False, f"HTML parsing error: {str(e)}"
+
 
 def generate_training_data(image_dir, html_dir, output_json_path):
     
@@ -25,6 +69,14 @@ def generate_training_data(image_dir, html_dir, output_json_path):
                     with open(html_path, "r",
                     encoding='utf-8') as f:
                         html_content = f.read()
+
+                        # Validate HTML structure
+                        is_valid, error_msg = validate_html(html_content, file)
+                        if not is_valid:
+                            print(f"Warning: Invalid HTML in {html_path}: {error_msg}")
+                            skipped_files.append(file)
+                            continue
+
                     # Create LLaMA-Factory format entry
                     example = {
                         "messages": [
